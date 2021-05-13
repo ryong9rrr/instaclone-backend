@@ -4,6 +4,14 @@
 
 ---
 
+## 📖 목차
+
+- #3.0 project 생성
+- #3.1 - 3.2 graphQL & Apollo-server
+- #3.3 Query & Mutation, 구조분해할당
+
+---
+
 --backend--
 
 - apollo server
@@ -70,4 +78,34 @@ $ npm run dev
   ...
 
 $ npm run dev
+```
+
+# #3.3 Query & Mutation, 구조분해할당
+
+```gql
+Mutation{
+  createMovie(title:"test4")
+}
+```
+
+위와 같이 `createMovie`를 실행하면
+
+```js
+createMovie: (_, args) => {
+      console.log(_, args);
+      return true;
+    }
+
+>>> undefined { title: "test4" }
+```
+
+즉 args는 객체의 형태라는 것이다. 따라서 우리가 원하는 `test4` 만 꺼내기 위해선 `args.title` 이라 할 수 있는데, 이것을 구조분해할당으로 더 간결하게 아래와 같이 표현할 수 있다. (코테문제풀면서도 써먹었던)
+
+```js
+createMovie: (_, { title }) => {
+      console.log(_, title);
+      return true;
+    }
+
+>>> undefined test4
 ```
