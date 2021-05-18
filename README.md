@@ -9,6 +9,8 @@
 - #3.0 project 생성
 - #3.1 - 3.2 graphQL & Apollo-server
 - #3.3 Query & Mutation, 구조분해할당
+- #3.4 prisma & postgresql 개발환경설정
+- #3.5 prisma migrate
 
 ---
 
@@ -109,3 +111,11 @@ createMovie: (_, { title }) => {
 
 >>> undefined test4
 ```
+
+# #3.4 prisma & postgresql 개발환경설정
+
+> https://velog.io/@ryong9rrr/Prisma-PostgreSQL-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
+
+# #3.5 prisma migrate
+
+> https://velog.io/@ryong9rrr/Prisma-PostgreSQL-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0

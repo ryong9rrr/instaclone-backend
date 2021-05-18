@@ -1,10 +1,16 @@
 import { ApolloServer, gql } from "apollo-server";
+import { PrismaClient } from "@prisma/client";
 
 // The GraphQL schema
+// schema.prisma 와 필수입력값을 일치시켜줘야함.
 const typeDefs = gql`
   type Movie {
-    title: String
-    year: Int
+    id: Int!
+    title: String!
+    year: Int!
+    genre: String
+    createdAt: String!
+    updatedAt: String!
   }
 
   type Query {
