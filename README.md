@@ -11,6 +11,7 @@
 - #3.3 Query & Mutation, 구조분해할당
 - #3.4 prisma & postgresql 개발환경설정
 - #3.5 prisma migrate
+- #3.6 - 3.7 CRUD with prisma client
 
 ---
 
@@ -119,3 +120,7 @@ createMovie: (_, { title }) => {
 # #3.5 prisma migrate
 
 > https://velog.io/@ryong9rrr/Prisma-PostgreSQL-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0
+
+# #3.6 - 3.7 CRUD with prisma client
+
+createMovie, deleteMovie, updateMovie, 전체 movies 조회, id로 movie 조회
