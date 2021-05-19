@@ -13,6 +13,7 @@
 - #3.5 prisma migrate
 - #3.6 - 3.8 CRUD with prisma client + prisma studio
 - #3.9 - 3.10 디렉토리구조 나누기
+- #3.11 Dotenv
 
 ---
 
@@ -34,13 +35,13 @@
 
 # #3.0 project 생성
 
-`npm init -y`
+📌 `npm init -y`
 
 # #3.1 - 3.2 graphQL & Apollo-server
 
 - apollo server 구축하기
 
-`npm install apollo-server graphql`
+📌 `npm install apollo-server graphql`
 
 ```
   "scripts": {
@@ -52,7 +53,7 @@ $ npm run dev
 
 - nodemon 설치
 
-`npm install --save-dev nodemon`
+📌 `npm install --save-dev nodemon`
 
 ```
   "scripts": {
@@ -64,7 +65,7 @@ $ npm run dev
 
 - babel 설치
 
-`npm i @babel/cli @babel/core @babel/node @babel/preset-env`
+📌 `npm i @babel/cli @babel/core @babel/node @babel/preset-env`
 
 ```
   "name": "instaclone",
@@ -122,12 +123,16 @@ createMovie: (_, { title }) => {
 
 > https://velog.io/@ryong9rrr/Prisma-PostgreSQL-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0
 
-# #3.6 - 3.7 CRUD with prisma client + prisma studio
+# #3.6 - 3.8 CRUD with prisma client + prisma studio
 
 createMovie, deleteMovie, updateMovie, 전체 movies 조회, id로 movie 조회
 
 # #3.9 - 3.10 디렉토리구조 나누기
 
-`npm install graphql-tools`
+📌 `npm install graphql-tools`
 
 `server.js client.js schema.js` 로 분리하고 `schema.js`에 `graphql-tools`로 `typeDefs, queries, mutations` 들을 합친다.
+
+# #3.11 Dotenv
+
+📌 `npm install dotenv`
