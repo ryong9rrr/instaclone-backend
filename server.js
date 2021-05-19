@@ -1,8 +1,8 @@
 import { ApolloServer, gql } from "apollo-server";
 import { PrismaClient } from "@prisma/client";
 
-// The GraphQL schema
-// schema.prisma 와 필수입력값을 일치시켜줘야함.
+const client = new PrismaClient();
+
 const typeDefs = gql`
   type Movie {
     id: Int!
@@ -15,29 +15,33 @@ const typeDefs = gql`
 
   type Query {
     movies: [Movie]
-    movie: Movie
+    movie(id: Int!): Movie
   }
   type Mutation {
-    createMovie(title: String!): Boolean
-    deleteMovie(title: String!): Boolean
+    createMovie(title: String!, year: Int!, genre: String): Movie
+    deleteMovie(id: Int!): Movie
+    updateMovie(id: Int!, year: Int!): Movie
   }
 `;
 
 // A map of functions which return data for the schema.
 const resolvers = {
   Query: {
-    movies: () => [],
-    movie: () => ({ title: "hello", year: 2021 }),
+    movies: () => client.movie.findMany(),
+    movie: (_, { id }) => client.movie.findUnique({ where: { id } }),
   },
   Mutation: {
-    createMovie: (_, { title }) => {
-      console.log(_, title);
-      return true;
-    },
-    deleteMovie: (_, args) => {
-      console.log(_, args);
-      return true;
-    },
+    createMovie: (_, { title, year, genre }) =>
+      client.movie.create({
+        data: {
+          title,
+          year,
+          genre,
+        },
+      }),
+    deleteMovie: (_, { id }) => client.movie.delete({ where: { id } }),
+    updateMovie: (_, { id, year }) =>
+      client.movie.update({ where: { id }, data: { year } }),
   },
 };
 
