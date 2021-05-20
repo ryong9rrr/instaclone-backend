@@ -7,14 +7,15 @@
 ## 📖 목차
 
 - #3.0 project 생성
-- #3.1 - 3.2 graphQL & Apollo-server
+- #3.1 ~ 3.2 graphQL & Apollo-server
 - #3.3 Query & Mutation, 구조분해할당
 - #3.4 prisma & postgresql 개발환경설정
 - #3.5 prisma migrate
-- #3.6 - 3.8 CRUD with prisma client + prisma studio
-- #3.9 - 3.10 디렉토리구조 나누기
+- #3.6 ~ 3.8 CRUD with prisma client + prisma studio
+- #3.9 ~ 3.10 디렉토리구조 나누기
 - #3.11 Dotenv
 - #3.12 new project ready
+- #4.0 ~ 4.2 Create Account
 
 ---
 
@@ -143,3 +144,9 @@ createMovie, deleteMovie, updateMovie, 전체 movies 조회, id로 movie 조회
 `Movies` 폴더삭제<br>
 `prisma - migrations` 폴더삭제<br>
 `DATABASE - instaclone` 삭제 후 재생성
+
+# #4.0 ~ 4.2 Create Account
+
+mutation - createAccount
+
+패스워드 암호화를 위한 bcrypt 📌 `npm install bcrypt`
