@@ -14,6 +14,7 @@
 - #3.6 - 3.8 CRUD with prisma client + prisma studio
 - #3.9 - 3.10 디렉토리구조 나누기
 - #3.11 Dotenv
+- #3.12 new project ready
 
 ---
 
@@ -136,3 +137,9 @@ createMovie, deleteMovie, updateMovie, 전체 movies 조회, id로 movie 조회
 # #3.11 Dotenv
 
 📌 `npm install dotenv`
+
+# #3.12 new project ready
+
+`Movies` 폴더삭제<br>
+`prisma - migrations` 폴더삭제<br>
+`DATABASE - instaclone` 삭제 후 재생성
