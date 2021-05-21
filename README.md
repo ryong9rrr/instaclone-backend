@@ -16,6 +16,7 @@
 - #3.11 Dotenv
 - #3.12 new project ready
 - #4.0 ~ 4.2 Create Account
+- #4.3 seeProfile, createAccount catch error
 
 ---
 
@@ -150,3 +151,9 @@ createMovie, deleteMovie, updateMovie, 전체 movies 조회, id로 movie 조회
 mutation - createAccount
 
 패스워드 암호화를 위한 bcrypt 📌 `npm install bcrypt`
+
+# #4.3 seeProfile, createAccount catch error
+
+1. query seeProfile - userName을 통해 user한명 정보보기
+
+2. createAccount 에서 동일한 userName이나 email이 있을 때 에러처리
