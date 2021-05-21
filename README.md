@@ -19,6 +19,7 @@
 - #4.3 seeProfile, createAccount catch error
 - #4.4 ~ 4.5 login with JWT token
 - #4.6 디렉토리구조 나누기 2
+- #4.7 editProfile
 
 ---
 
@@ -167,3 +168,7 @@ login 확인을 위한 token 📌 `npm install jsonwebtoken`
 # #4.6 디렉토리구조 나누기 2
 
 typeDefs대로 나누고 queries와 mutations를 resolvers로 합치기
+
+# #4.7 editProfile
+
+editProfile 뼈대잡기 (우선 where id:1 로 잡고...)
