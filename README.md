@@ -17,6 +17,7 @@
 - #3.12 new project ready
 - #4.0 ~ 4.2 Create Account
 - #4.3 seeProfile, createAccount catch error
+- #4.4 ~ 4.5 login with JWT token
 
 ---
 
@@ -157,3 +158,7 @@ mutation - createAccount
 1. query seeProfile - userName을 통해 user한명 정보보기
 
 2. createAccount 에서 동일한 userName이나 email이 있을 때 에러처리
+
+# #4.4 ~ 4.5 login with JWT token
+
+login 확인을 위한 token 📌 `npm install jsonwebtoken`
