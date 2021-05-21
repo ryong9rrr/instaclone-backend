@@ -20,6 +20,7 @@
 - #4.4 ~ 4.5 login with JWT token
 - #4.6 디렉토리구조 나누기 2
 - #4.7 editProfile
+- #4.8 ~ 4.9 http request
 
 ---
 
@@ -172,3 +173,19 @@ typeDefs대로 나누고 queries와 mutations를 resolvers로 합치기
 # #4.7 editProfile
 
 editProfile 뼈대잡기 (우선 where id:1 로 잡고...)
+
+# #4.8 ~ 4.9 http request 방법론
+
+editProfile 과 같은 resolver는 로그인이 된 상태에서 실행되어야한다.
+
+그러면 이걸 어떻게하느냐... 로그인 시 http header로 token을 보내놓고 token이 없으면 실행이 안되어야함.
+
+일단 http headers에 토큰을 적어놓은 상태에서 이 방법론대로 실행될 수 있음.
+
+```
+HTTP HEADERS
+
+{
+  "token" : "token code"
+}
+```
