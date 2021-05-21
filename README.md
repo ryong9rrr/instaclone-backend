@@ -21,6 +21,7 @@
 - #4.6 디렉토리구조 나누기 2
 - #4.7 editProfile
 - #4.8 ~ 4.9 http request
+- #4.10 utils.js > getUser()
 
 ---
 
@@ -189,3 +190,7 @@ HTTP HEADERS
   "token" : "token code"
 }
 ```
+
+# #4.10 utils.js > getUser()
+
+token이 필요한 resolver(로그인상태일때만 사용되어야 할 resolver)를 위한 함수
