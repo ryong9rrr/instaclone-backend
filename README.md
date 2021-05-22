@@ -22,6 +22,7 @@
 - #4.7 editProfile
 - #4.8 ~ 4.9 http request
 - #4.10 utils.js > getUser()
+- #4.11 utils.js > protectResolver()
 
 ---
 
@@ -194,3 +195,7 @@ HTTP HEADERS
 # #4.10 utils.js > getUser()
 
 token이 필요한 resolver(로그인상태일때만 사용되어야 할 resolver)를 위한 함수
+
+# #4.11 utils.js > protectResolver()
+
+때로는 resolver를 보호해야할 때가 있다. login은 제외
