@@ -23,6 +23,7 @@
 - #4.8 ~ 4.9 http request
 - #4.10 utils.js > getUser()
 - #4.11 utils.js > protectResolver()
+- #4.12 Currying
 
 ---
 
@@ -199,3 +200,7 @@ token이 필요한 resolver(로그인상태일때만 사용되어야 할 resolve
 # #4.11 utils.js > protectResolver()
 
 때로는 resolver를 보호해야할 때가 있다. login은 제외
+
+# #4.12 Currying
+
+함수형 프로그래밍 기법 Currying
