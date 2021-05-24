@@ -23,8 +23,8 @@ export const getUser = async (token) => {
 };
 
 // currying
-export const protectedResolver =
-  (ourResolver) => (root, args, context, info) => {
+export function protectedResolver(ourResolver) {
+  return function (root, args, context, info) {
     //user가 not login이면
     if (!context.loggedInUser) {
       return {
@@ -34,3 +34,4 @@ export const protectedResolver =
     }
     return ourResolver(root, args, context, info);
   };
+}

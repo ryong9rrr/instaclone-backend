@@ -24,6 +24,7 @@
 - #4.10 utils.js > getUser()
 - #4.11 utils.js > protectResolver()
 - #4.12 Currying
+- #4.13 Currying refactoring
 
 ---
 
@@ -204,3 +205,7 @@ token이 필요한 resolver(로그인상태일때만 사용되어야 할 resolve
 # #4.12 Currying
 
 함수형 프로그래밍 기법 Currying
+
+# #4.13 Currying refactoring
+
+리팩토링. `protectedResolver()`는 `ok` 와 `error` 두 개의 인자를 반환한다는 것에 주의.
