@@ -27,6 +27,7 @@
 - #4.13 Currying refactoring
 - #4.14 File Upload - 1
 - #4.15 File Upload - 2 with Altair
+- #4.16 nodeJS error fix
 
 ---
 
@@ -380,3 +381,11 @@ Promise {
   }
 }
 ```
+
+# #4.16 nodeJS error fix
+
+altair에서 파일업로드를 하려하면 `maximum call stack size exceeded` 에러가 나서 fix...
+
+(다음에는 우분투로 npm, nodejs를 다운받아야겠다.)
+
+`package.json` 에 코드 몇 가지 추가하고 `node_modules` 삭제 후 `npm cache clean --force` 로 캐시 삭제 후 다시 `npm i`
