@@ -28,6 +28,7 @@
 - #4.14 File Upload - 1
 - #4.15 File Upload - 2 with Altair
 - #4.16 nodeJS error fix
+- #4.17 File Upload - 3 - stream
 
 ---
 
@@ -389,3 +390,7 @@ altair에서 파일업로드를 하려하면 `maximum call stack size exceeded` 
 (다음에는 우분투로 npm, nodejs를 다운받아야겠다.)
 
 `package.json` 에 코드 몇 가지 추가하고 `node_modules` 삭제 후 `npm cache clean --force` 로 캐시 삭제 후 다시 `npm i`
+
+# #4.17 File Upload - 3 - stream
+
+stream 연결하기(pipe), 나중에는 apollo-server가 upload를 지원안한다고..? 하는데 뭐 일단 그렇게만 알아두자.
