@@ -1,163 +1,3 @@
-# instaclone-backend
-
-`git config --global core.autocrlf true`
-
----
-
-## 📖 목차
-
-- #3.0 project 생성
-- #3.1 ~ 3.2 graphQL & Apollo-server
-- #3.3 Query & Mutation, 구조분해할당
-- #3.4 prisma & postgresql 개발환경설정
-- #3.5 prisma migrate
-- #3.6 ~ 3.8 CRUD with prisma client + prisma studio
-- #3.9 ~ 3.10 디렉토리구조 나누기
-- #3.11 Dotenv
-- #3.12 new project ready
-- #4.0 ~ 4.2 Create Account
-- #4.3 seeProfile, createAccount catch error
-- #4.4 ~ 4.5 login with JWT token
-- #4.6 디렉토리구조 나누기 2
-- #4.7 editProfile
-- #4.8 ~ 4.9 http request
-- #4.10 utils.js > getUser()
-- #4.11 utils.js > protectResolver()
-- #4.12 Currying
-- #4.13 Currying refactoring
-- #4.14 File Upload - 1
-- #4.15 File Upload - 2 with Altair
-- #4.16 nodeJS error fix
-- #4.17 File Upload - 3 - stream
-
----
-
---backend--
-
-- apollo server
-- prisma2 > prisma studio / prisma CLI / prisma client / prisma migrate
-- graphQL
-
---frontend--
-
-- react
-
---app--
-
-- react-native > expo / CLI, CLI는 기업에서 쓰인다. 둘다 배울거임
-
----
-
-# #3.0 project 생성
-
-📌 `npm init -y`
-
-# #3.1 - 3.2 graphQL & Apollo-server
-
-- apollo server 구축하기
-
-📌 `npm install apollo-server graphql`
-
-```
-  "scripts": {
-    "dev": "node server.js"
-  },
-
-$ npm run dev
-```
-
-- nodemon 설치
-
-📌 `npm install --save-dev nodemon`
-
-```
-  "scripts": {
-    "dev": "nodemon --exec node server.js"
-  },
-
-$ npm run dev
-```
-
-- babel 설치
-
-📌 `npm i @babel/cli @babel/core @babel/node @babel/preset-env`
-
-```
-  "name": "instaclone",
-  "version": "1.0.0",
-  ...
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  ...
-  "scripts": {
-  "dev": "nodemon --exec babel-node server"
-  },
-  ...
-
-$ npm run dev
-```
-
-# #3.3 Query & Mutation, 구조분해할당
-
-```gql
-Mutation{
-  createMovie(title:"test4")
-}
-```
-
-위와 같이 `createMovie`를 실행하면
-
-```js
-createMovie: (_, args) => {
-      console.log(_, args);
-      return true;
-    }
-
->>> undefined { title: "test4" }
-```
-
-즉 args는 객체의 형태라는 것이다. 따라서 우리가 원하는 `test4` 만 꺼내기 위해선 `args.title` 이라 할 수 있는데, 이것을 구조분해할당으로 더 간결하게 아래와 같이 표현할 수 있다. (코테문제풀면서도 써먹었던)
-
-```js
-createMovie: (_, { title }) => {
-      console.log(_, title);
-      return true;
-    }
-
->>> undefined test4
-```
-
-# #3.4 prisma & postgresql 개발환경설정
-
-> https://velog.io/@ryong9rrr/Prisma-PostgreSQL-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
-
-# #3.5 prisma migrate
-
-> https://velog.io/@ryong9rrr/Prisma-PostgreSQL-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0
-
-# #3.6 - 3.8 CRUD with prisma client + prisma studio
-
-createMovie, deleteMovie, updateMovie, 전체 movies 조회, id로 movie 조회
-
-# #3.9 - 3.10 디렉토리구조 나누기
-
-📌 `npm install graphql-tools`
-
-`server.js client.js schema.js` 로 분리하고 `schema.js`에 `graphql-tools`로 `typeDefs, queries, mutations` 들을 합친다.
-
-# #3.11 Dotenv
-
-📌 `npm install dotenv`
-
-# #3.12 new project ready
-
-`Movies` 폴더삭제<br>
-`prisma - migrations` 폴더삭제<br>
-`DATABASE - instaclone` 삭제 후 재생성
-
 # #4.0 ~ 4.2 Create Account
 
 mutation - createAccount
@@ -394,3 +234,13 @@ altair에서 파일업로드를 하려하면 `maximum call stack size exceeded` 
 # #4.17 File Upload - 3 - stream
 
 stream 연결하기(pipe), 나중에는 apollo-server가 upload를 지원안한다고..? 하는데 뭐 일단 그렇게만 알아두자.
+
+# #4.18 express
+
+apollo-server 를 express & apollo-server-express 서버로 변경
+
+📌 `npm i express apollo-server-express`
+
+HTTP request logger를 확인할 미들웨어 morgan 설치
+
+📌 `npm install morgan`
