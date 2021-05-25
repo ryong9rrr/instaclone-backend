@@ -26,6 +26,7 @@
 - #4.12 Currying
 - #4.13 Currying refactoring
 - #4.14 File Upload - 1
+- #4.15 File Upload - 2 with Altair
 
 ---
 
@@ -213,7 +214,7 @@ token이 필요한 resolver(로그인상태일때만 사용되어야 할 resolve
 
 # #4.14 File Upload - 1
 
-- 파일업로드를 위한 schema 추가(bio, avatar), 그에 따라 `users.typeDefs`도 바꿔주고.. `editProfile.resolvers`에도 `args` 추가..
+- `schema.prima` 👉 파일업로드를 위한 schema 추가(bio, avatar), 그에 따라 `users.typeDefs`도 바꿔주고.. `editProfile.resolvers`에도 `args` 추가..
 
 - 지금까지는 `typeDefs`와 `resolvers`를 통합시켜줘서 `Upload`라는 스칼라타입이 없었음. 하지만 파일업로드를 위해서는 `Upload`가 필요한데,
 
@@ -343,3 +344,39 @@ scalar Upload
 ```
 
 위 처럼 몇 가지 새로운 타입과 `Upload`라는 스칼라타입이 생겼음.
+
+# #4.15 File Upload - 2 with Altair
+
+file 업로드 작업은 `playground` 로는 안돼서 `Altair` 설치, Altair는 graphql전용 클라이언트.
+
+**Altair**
+
+```
+mutation($bio:String, $avatar:Upload){
+  editProfile(bio:$bio, avatar:$avatar){
+    ok
+    error
+  }
+}
+
+//variables 쓰는법
+<VARIABLES>
+{
+  "bio": "im super happy"
+}
+```
+
+Add files에 변수명 avatar로 바꾸고 파일업로드, 그리고 request를 보내고 `avatar`를 콘솔로 찍어보면
+
+**console**
+
+```
+Promise {
+  {
+    filename: 'me.jpg',
+    mimetype: 'image/jpeg',
+    encoding: '7bit',
+    createReadStream: [Function: createReadStream]
+  }
+}
+```
