@@ -244,3 +244,11 @@ apollo-server 를 express & apollo-server-express 서버로 변경
 HTTP request logger를 확인할 미들웨어 morgan 설치
 
 📌 `npm install morgan`
+
+# #4.19 changing Avatar
+
+파일이름 유니크하게 바꾸기, 서버에 path 추가.
+
+또 `Maximun call stack size exceeded Error` 떠서 다시 처리했음.
+
+일단 `preinstall": "npx npm-force-resolutions@0.0.3` 로 바꿔줬다.
