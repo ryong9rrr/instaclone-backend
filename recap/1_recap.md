@@ -32,6 +32,7 @@
 - #4.18 express
 - #4.19 changing Avatar
 - #4.19.1 createAccount fix
+- #4.20 ~ 4.22.1 follow & unfollow
 
 ---
 

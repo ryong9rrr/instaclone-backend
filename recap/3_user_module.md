@@ -256,3 +256,7 @@ HTTP request logger를 확인할 미들웨어 morgan 설치
 # #4.19.1 createAccount fix
 
 createAccount에서 mutation은 불리언과 에러 두가지로 리턴하기로 했으므로 user를 리턴하는것이 아닌 ok와 error를 리턴하는 걸로 수정
+
+# #4.20 ~ 4.22.1 follow & unfollow
+
+user의 follower는 건드리지않는다 > following의 유무에 따라 follower가 바뀌는 것이기 때문.
