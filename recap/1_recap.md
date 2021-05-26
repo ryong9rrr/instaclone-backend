@@ -31,6 +31,7 @@
 - #4.17 File Upload - 3 - stream
 - #4.18 express
 - #4.19 changing Avatar
+- #4.19.1 createAccount fix
 
 ---
 

@@ -252,3 +252,7 @@ HTTP request logger를 확인할 미들웨어 morgan 설치
 또 `Maximun call stack size exceeded Error` 떠서 다시 처리했음.
 
 일단 `preinstall": "npx npm-force-resolutions@0.0.3` 로 바꿔줬다.
+
+# #4.19.1 createAccount fix
+
+createAccount에서 mutation은 불리언과 에러 두가지로 리턴하기로 했으므로 user를 리턴하는것이 아닌 ok와 error를 리턴하는 걸로 수정
