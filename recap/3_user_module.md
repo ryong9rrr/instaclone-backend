@@ -268,3 +268,34 @@ prisma의 `include`를 이용해서 `User`안의 배열인 `followers` 와 `foll
 매우 간단하지만 이 경우, 배열의 크기가 굉장히 커진다면 DB의 비용이 커진다.
 
 include라는 기능이 있다는 것만 알아두고 다른 로직으로 `seeFollow`를 구현해보자.
+
+# #4.23.1 seeFollowers 의 2가지 방법
+
+팔로워를 보는 resolver `seeFollwers` 를 만들었다.
+
+1. user가 가지고있는 follwers의 배열을 가져오는 법
+
+```
+//1. user의 모든 팔로워를 찾는 법
+const aFollowers = await client.user
+  .findUnique({ where: { userName } })
+  .followers();
+
+console.log(aFollowers);
+```
+
+2. 그 user를 following 하고 있는 유저들을 가져오는 법
+
+```
+//2. user를 팔로잉하는 사람들을 찾는법
+const bFollowers = await client.user.findMany({
+  where: {
+    following: {
+      some: {
+        userName,
+      },
+    },
+  },
+});
+console.log(bFollowers);
+```
