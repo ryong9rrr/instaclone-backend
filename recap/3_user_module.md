@@ -313,3 +313,9 @@ offset pagination은 `1 2 3 4 ... 26` 이런식의 일반적인 pagination이다
 # #4.24 offset Pagination 2
 
 pagination은 `#4.23.1` 의 1번방법, totalFollowers 는 2번방법.
+
+# #4.25 cursor pagination
+
+`seeFollwers`와 `seeFollowing` 를 cursor pagination으로 변경해보자.
+
+cursor pagination은 무한스크롤 로직이다. 프론트엔드 단에서 마지막으로 본 데이터를 db에 넘겨주고(**request**), db는 그 이후의 데이터를 프론트로 다시 전송한다.

@@ -37,6 +37,7 @@
 - #4.23.1 seeFollowers 의 2가지 방법
 - #4.23.2 offset Pagination 1
 - #4.24 offset Pagination 2
+- #4.25 cursor pagination
 
 ---
 
