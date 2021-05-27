@@ -299,3 +299,13 @@ const bFollowers = await client.user.findMany({
 });
 console.log(bFollowers);
 ```
+
+# #4.23.2 offset Pagination 1
+
+> https://www.prisma.io/docs/concepts/components/prisma-client/pagination
+
+`#4.23.1` 에서 1번 방법을 채택, 하지만 이 상태 그대로 쓰면 데이터가 커질 시, 비용이 굉장히 커질 것이다. pagination을 해보자.
+
+**offset pagination**
+
+offset pagination은 `1 2 3 4 ... 26` 이런식의 일반적인 pagination이다.

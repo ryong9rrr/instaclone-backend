@@ -35,6 +35,7 @@
 - #4.20 ~ 4.22.1 follow & unfollow
 - #4.22.2 seeFollow with `include`
 - #4.23.1 seeFollowers 의 2가지 방법
+- #4.23.2 offset Pagination 1
 
 ---
 
