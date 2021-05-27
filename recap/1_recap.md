@@ -38,6 +38,7 @@
 - #4.23.2 offset Pagination 1
 - #4.24 offset Pagination 2
 - #4.25 cursor pagination
+- #4.26 ~ 4.28 Computed Fields
 
 ---
 

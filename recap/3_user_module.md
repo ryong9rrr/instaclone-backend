@@ -319,3 +319,20 @@ pagination은 `#4.23.1` 의 1번방법, totalFollowers 는 2번방법.
 `seeFollwers`와 `seeFollowing` 를 cursor pagination으로 변경해보자.
 
 cursor pagination은 무한스크롤 로직이다. 프론트엔드 단에서 마지막으로 본 데이터를 db에 넘겨주고(**request**), db는 그 이후의 데이터를 프론트로 다시 전송한다.
+
+# #4.26 ~ 4.28 Computed Fields
+
+computed fields 는 virtual values.
+
+- `users.typeDefs.js` 에 새로운 스칼라타입을 추가했다.
+
+```
+totalFollowers: Int!
+totalFollowing: Int!
+isFollowing: Boolean!
+isMe: Boolean!
+```
+
+여기서 `totalFollewrs, totalFollowing` 은 로그인을 필수로 하지않지만 `isFollowing, isMe` 는 로그인을 필수로 한다.
+
+- 자기 자신을 follow하지 못하는 코드를 `isFollowing`, `followUser.resolvers.js` 어디에 추가해야할까? 아예 추가하지않아도 프론트엔드단에서 처리가 가능할 것 같은데 어떻게 하는게 좋을지 생각중.
