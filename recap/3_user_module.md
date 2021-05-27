@@ -260,3 +260,11 @@ createAccount에서 mutation은 불리언과 에러 두가지로 리턴하기로
 # #4.20 ~ 4.22.1 follow & unfollow
 
 user의 follower는 건드리지않는다 > following의 유무에 따라 follower가 바뀌는 것이기 때문.
+
+# #4.22.2 seeFollow with include
+
+prisma의 `include`를 이용해서 `User`안의 배열인 `followers` 와 `following` 을 확인 할 수 있다.
+
+매우 간단하지만 이 경우, 배열의 크기가 굉장히 커진다면 DB의 비용이 커진다.
+
+include라는 기능이 있다는 것만 알아두고 다른 로직으로 `seeFollow`를 구현해보자.

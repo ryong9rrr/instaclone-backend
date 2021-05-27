@@ -2,6 +2,13 @@ import client from "../client";
 
 export default {
   Query: {
-    users: () => client.user.findMany(),
+    users: () => {
+      return client.user.findMany({
+        include: {
+          followers: true,
+          following: true,
+        },
+      });
+    },
   },
 };
