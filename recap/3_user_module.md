@@ -336,3 +336,7 @@ isMe: Boolean!
 여기서 `totalFollewrs, totalFollowing` 은 로그인을 필수로 하지않지만 `isFollowing, isMe` 는 로그인을 필수로 한다.
 
 - 자기 자신을 follow하지 못하는 코드를 `isFollowing`, `followUser.resolvers.js` 어디에 추가해야할까? 아예 추가하지않아도 프론트엔드단에서 처리가 가능할 것 같은데 어떻게 하는게 좋을지 생각중.
+
+# #4.29 searchUsers
+
+cursor pagination으로 유저 검색하기
