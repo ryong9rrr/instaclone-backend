@@ -40,6 +40,7 @@
 - #4.25 cursor pagination
 - #4.26 ~ 4.28 Computed Fields
 - #4.29 searchUsers
+- #6.0 ~ 6.1 photos model relation
 
 ---
 
