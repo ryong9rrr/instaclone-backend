@@ -15,6 +15,7 @@
 - #3.9 ~ 3.10 디렉토리구조 나누기
 - #3.11 Dotenv
 - #3.12 new project ready
+
 - #4.0 ~ 4.2 Create Account
 - #4.3 seeProfile, createAccount catch error
 - #4.4 ~ 4.5 login with JWT token
@@ -40,7 +41,9 @@
 - #4.25 cursor pagination
 - #4.26 ~ 4.28 Computed Fields
 - #4.29 searchUsers
+
 - #6.0 ~ 6.1 photos model relation
+- #6.2 ~ 6.5 Upload photo & hashtag
 
 ---
 

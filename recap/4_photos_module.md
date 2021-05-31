@@ -28,3 +28,13 @@ model Photo{
 ```
 
 -> 1:N 관계라는 것을 명시하고, `model Photo` 에서 외래키는 `userId`이고, User의 id 값 이다.
+
+# #6.2 ~ 6.5 Upload photo & hashtag
+
+- module 구조를 어떻게 할지 생각해 봐야한다. `Hashtag`를 `photo` 모듈안에 둘지.. 아니면 따로 둘지.. 만들면서 구조를 바꿔나갈 수도 있음.
+
+- **schema.prisma** 에서 hashtag -> unique 값으로 수정했음.
+
+- prisma의 `connectOrCreate` 는 unique한 필드값에만 사용할수있음.
+
+- `photos.resolvers.js` > computed field로 user와 hashtag를 명시
