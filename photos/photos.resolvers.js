@@ -18,7 +18,7 @@ export default {
       });
     },
     totalPhotos: ({ id }) => {
-      return client.hashtag.findMany({ where: { photos: { some: { id } } } });
+      return client.photo.count({ where: { hashtags: { some: { id } } } });
     },
   },
 };
