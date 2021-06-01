@@ -38,3 +38,11 @@ model Photo{
 - prisma의 `connectOrCreate` 는 unique한 필드값에만 사용할수있음.
 
 - `photos.resolvers.js` > computed field로 user와 hashtag를 명시
+
+`protectedResolver` 는 `ok` , `error` 를 반환하는데.. `UploadPhoto` 를 그러면 `Photo` 가 아니라 `UploadPhotoResult`로 해주는게 좋지 않을까? (`protectedResolver` 로 감싸주는 건 `Result`형태로 규칙성있게)
+
+# # #6.6 seeHashtag
+
+computed field로 args를 넘겨줄수도있다.
+
+hashtag를 입력 시 사진 데이터받는것을 cursor pagination으로 구현

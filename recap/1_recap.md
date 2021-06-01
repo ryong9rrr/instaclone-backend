@@ -44,6 +44,7 @@
 
 - #6.0 ~ 6.1 photos model relation
 - #6.2 ~ 6.5 Upload photo & hashtag
+- #6.6 seeHashtag
 
 ---
 
