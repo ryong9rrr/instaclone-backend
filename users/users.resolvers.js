@@ -2,19 +2,18 @@ import client from "../client";
 
 export default {
   Query: {
-    users: () => {
-      return client.user.findMany({
+    users: () =>
+      client.user.findMany({
         include: {
           followers: true,
           following: true,
         },
-      });
-    },
+      }),
   },
   //computed fields
   User: {
-    totalFollowers: ({ id }) => {
-      return client.user.count({
+    totalFollowers: ({ id }) =>
+      client.user.count({
         where: {
           following: {
             some: {
@@ -22,10 +21,9 @@ export default {
             },
           },
         },
-      });
-    },
-    totalFollowing: ({ id }) => {
-      return client.user.count({
+      }),
+    totalFollowing: ({ id }) =>
+      client.user.count({
         where: {
           followers: {
             some: {
@@ -33,8 +31,7 @@ export default {
             },
           },
         },
-      });
-    },
+      }),
     isMe: ({ id }, _, { loggedInUser }) => {
       if (!loggedInUser) {
         return false;
