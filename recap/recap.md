@@ -53,6 +53,7 @@
 - #6.6 seeHashtag
 - #6.7.1 User > photos
 - #6.7.2 searchPhotos
+- #6.7.3 ~ 6.8 editPhoto
 
 ---
 
@@ -589,3 +590,11 @@ User feed에 가면 모든사진을 다 띄워야하니까 pagination은 필요�
 ## #6.7.2 searchPhotos
 
 searchPhotos ... cursor pagination 해줘야 할까?
+
+## #6.7.3 ~ 6.8 editPhoto
+
+- mutation 에서만 result type으로 해주는 중
+
+- hashtag 생성하는 함수 `processHashtag` 를 `photos.utils.js` 에 만들었음 > `uploadPhoto` 에도 적용.
+
+- `User`에서도 총 사진수를 확인할수있도록 `totalPhotos`필드를 만들어봤음ㅎ
