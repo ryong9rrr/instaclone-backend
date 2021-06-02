@@ -52,6 +52,7 @@
 - #6.2 ~ 6.5 Upload photo & hashtag
 - #6.6 seeHashtag
 - #6.7.1 User > photos
+- #6.7.2 searchPhotos
 
 ---
 
@@ -582,3 +583,9 @@ hashtag를 입력 시 사진 데이터받는것을 cursor pagination으로 구�
 **schema.prisma** 에서는 user와 photo간의 관계를 명시하였기 때문에 prisma studio에서 User를 보면 photos가 모두 떴음.
 
 하지만 graphql (local4000) 에서는 type 명시를 안해줬기 때문에 해줘야하고, 동시에 resolver에서도 명시해야함.
+
+User feed에 가면 모든사진을 다 띄워야하니까 pagination은 필요없을 듯..?
+
+## #6.7.2 searchPhotos
+
+searchPhotos ... cursor pagination 해줘야 할까?
