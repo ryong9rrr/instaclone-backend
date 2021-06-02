@@ -3,7 +3,7 @@ import { protectedResolver } from "../../users/users.utils";
 import { processHashtags } from "../photos.utils";
 
 const resolverFn = async (_, { file, caption }, { loggedInUser }) => {
-  let hashtagObj = await processHashtags(caption);
+  let hashtagObj = processHashtags(caption);
 
   return client.photo.create({
     data: {

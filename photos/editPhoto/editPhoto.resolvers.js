@@ -17,7 +17,7 @@ const resolverFn = async (_, { id, caption }, { loggedInUser }) => {
       },
     },
   });
-  console.log(oldPhoto);
+
   if (!oldPhoto) {
     return {
       ok: false,
@@ -25,7 +25,7 @@ const resolverFn = async (_, { id, caption }, { loggedInUser }) => {
     };
   }
 
-  const newPhoto = await client.photo.update({
+  await client.photo.update({
     where: { id },
     data: {
       caption,
@@ -37,11 +37,8 @@ const resolverFn = async (_, { id, caption }, { loggedInUser }) => {
     },
   });
 
-  console.log(newPhoto);
-
   return {
     ok: true,
-    error: "test good",
   };
 };
 
