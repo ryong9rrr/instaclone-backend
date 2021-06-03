@@ -57,6 +57,7 @@
 - #6.9.1 editPhoto done
 - #6.9.2 ~ 6.10 toggle Like
 - #6.11 seePhoto - likes
+- #6.12 seeFeed
 
 ---
 
@@ -620,3 +621,9 @@ prisma 데이터모델로 쓰일 **schema.prisma** 에 `model Like`를 추가. (
 - 사진에 "좋아요한 사람들"을 보여주는 기능
 
 - `select` 와 `include`의 차이 알고가기
+
+## #6.12 seeFeed
+
+`Photo`를 올린 `User`의 `followers의 id` == `로그인한 User의 id` 인 `Photo`가 팔로워들의 피드에 보여지는 로직.
+
+하지만 내껏도 보여야하기 때문에 `OR`을 사용, `createAt`을 내림차순으로 하여 최신Photo가 맨 위에 뜨도록하였음.
