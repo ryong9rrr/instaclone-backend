@@ -7,6 +7,7 @@ export default gql`
     file: String!
     caption: String
     hashtags: [Hashtag]
+    likes: Int!
     createdAt: String!
     updatedAt: String!
   }
@@ -19,4 +20,13 @@ export default gql`
     createdAt: String!
     updatedAt: String!
   }
+
+  type Like {
+    id: Int!
+    photo: Photo!
+    createdAt: String!
+    updatedAt: String!
+  }
 `;
+
+// type Like는 좋아요를 누른 목록을 보여주는 기능이 없으면 필요없을지도?

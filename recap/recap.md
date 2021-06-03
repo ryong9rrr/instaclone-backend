@@ -55,6 +55,7 @@
 - #6.7.2 searchPhotos
 - #6.7.3 ~ 6.8 editPhoto
 - #6.9.1 editPhoto done
+- #6.9.2 ~ 6.10 toggle Like
 
 ---
 
@@ -603,3 +604,12 @@ searchPhotos ... cursor pagination 해줘야 할까?
 ## #6.9.1 editPhoto done
 
 `processHashtag` 에는 `await` 가 필요없을듯.
+
+## #6.9.2 ~ 6.10.1 toggle Like
+
+prisma 데이터모델로 쓰일 **schema.prisma** 에 `model Like`를 추가. (graphQL 진영에서, "좋아요 누른 게시물보기"라는 기능을 만들지 않을거면 `Like` 라는 type은 없어도 될 것 같지만 일단 만듬.)
+
+- User는 여러개의 Like를 가질수있다.
+- Photo는 여러개의 Like를 가질수있다.
+
+따라서 Like에 User와 Photo필드는 relation(외래키)을 정의해야한다.
