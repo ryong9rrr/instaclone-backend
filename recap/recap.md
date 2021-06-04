@@ -59,6 +59,7 @@
 - #6.11 seePhoto - likes
 - #6.12 seeFeed
 - #6.13 ~ 6.14 model Comment
+- #6.15 isMine
 
 ---
 
@@ -640,3 +641,7 @@ Photo 와 Comment 에 `isMine` computed field 추가.(본인의 것이면 edit �
 사진의 댓글을 볼 수 있는 `seePhotoComments`는 `photos`안에 만들었는데 이런 아키텍처빌드를 세우는게 어렵다..프로젝트 시작전에 명확히 해야함.
 
 ❓ seePhotoComments에서 더 좋은 pagination이 있을까?
+
+## #6.15 isMine
+
+photo와 comment가 내가 올린 거면 edit할 수 있어야함(프론트진영에서 처리할수도있지만 백엔드진영에서도 정의해주는 것이 좋다.)
