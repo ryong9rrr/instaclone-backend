@@ -58,6 +58,7 @@
 - #6.9.2 ~ 6.10 toggle Like
 - #6.11 seePhoto - likes
 - #6.12 seeFeed
+- #6.13 ~ 6.14 model Comment
 
 ---
 
@@ -627,3 +628,15 @@ prisma 데이터모델로 쓰일 **schema.prisma** 에 `model Like`를 추가. (
 `Photo`를 올린 `User`의 `followers의 id` == `로그인한 User의 id` 인 `Photo`가 팔로워들의 피드에 보여지는 로직.
 
 하지만 내껏도 보여야하기 때문에 `OR`을 사용, `createAt`을 내림차순으로 하여 최신Photo가 맨 위에 뜨도록하였음.
+
+## #6.13 ~ 6.14 model Comment
+
+createComment, seePhotoComments
+
+`schema.prisma` 에 `model Comment` 정의
+
+Photo 와 Comment 에 `isMine` computed field 추가.(본인의 것이면 edit 할 수 있어야함.)
+
+사진의 댓글을 볼 수 있는 `seePhotoComments`는 `photos`안에 만들었는데 이런 아키텍처빌드를 세우는게 어렵다..프로젝트 시작전에 명확히 해야함.
+
+❓ seePhotoComments에서 더 좋은 pagination이 있을까?
