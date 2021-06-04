@@ -60,6 +60,7 @@
 - #6.12 seeFeed
 - #6.13 ~ 6.14 model Comment
 - #6.15 isMine
+- #6.16.1 Delete Comment and Photos 1
 
 ---
 
@@ -645,3 +646,9 @@ Photo 와 Comment 에 `isMine` computed field 추가.(본인의 것이면 edit �
 ## #6.15 isMine
 
 photo와 comment가 내가 올린 거면 edit할 수 있어야함(프론트진영에서 처리할수도있지만 백엔드진영에서도 정의해주는 것이 좋다.)
+
+## #6.16.1 Delete Comment and Photos 1
+
+이 방법대로 하면 Like와 Hashtag가 없는 Photo와 Comment는 삭제가 된다. 하지만... Like나 Hashtag가 있으면 에러가난다.
+
+Comment와 Photos를 삭제할 때, 연결되어있는 `Like`와 `Hashtags`의 처리를 해줄 것.
