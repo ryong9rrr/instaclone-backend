@@ -652,3 +652,7 @@ photo와 comment가 내가 올린 거면 edit할 수 있어야함(프론트진�
 이 방법대로 하면 Like와 Hashtag가 없는 Photo와 Comment는 삭제가 된다. 하지만... Like나 Hashtag가 있으면 에러가난다.
 
 Comment와 Photos를 삭제할 때, 연결되어있는 `Like`와 `Hashtags`의 처리를 해줄 것.
+
+## #6.16.2 deletePhoto
+
+photo에는 `hashtags`, `likes`, `comments` 가 연결되어 있으므로 값들이 모두 없어져야 delete를 할 수 있다. 따라서 모두 0으로 만드는 update를 함.
