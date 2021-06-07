@@ -4,7 +4,15 @@ import { protectedResolver } from "../../users/users.utils";
 const resolverFn = async (_, { id }, { loggedInUser }) => {
   const comment = await client.comment.findUnique({
     where: { id },
-    select: { userId: true },
+    select: {
+      photoId: true,
+      userId: true,
+      hashtags: {
+        select: {
+          hashtag: true,
+        },
+      },
+    },
   });
 
   if (!comment) {
@@ -18,6 +26,22 @@ const resolverFn = async (_, { id }, { loggedInUser }) => {
       error: "Not authorized",
     };
   } else {
+    //hashtags 삭제
+    console.log(comment);
+    const hashtags = comment.hashtags.map((hashtag) => hashtag);
+
+    await client.photo.update({
+      where: {
+        id: comment.photoId,
+      },
+      data: {
+        hashtags: {
+          disconnect: hashtags,
+        },
+      },
+    });
+
+    //comment 삭제
     await client.comment.delete({
       where: {
         id,

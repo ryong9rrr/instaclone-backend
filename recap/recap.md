@@ -61,6 +61,8 @@
 - #6.13 ~ 6.14 model Comment
 - #6.15 isMine
 - #6.16.1 Delete Comment and Photos 1
+- #6.16.2 deletePhoto
+- #6.16.3 Comment hashtags
 
 ---
 
@@ -656,3 +658,13 @@ Comment와 Photos를 삭제할 때, 연결되어있는 `Like`와 `Hashtags`의 �
 ## #6.16.2 deletePhoto
 
 photo에는 `hashtags`, `likes`, `comments` 가 연결되어 있으므로 값들이 모두 없어져야 delete를 할 수 있다. 따라서 모두 0으로 만드는 update를 함.
+
+## #6.16.3 Comment hashtags
+
+comment에 hashtags 필드를 추가하고 resolver 수정.
+
+**createComment**
+comment에 hashtag가 있다면 추가하고, 그 photo에 connect 한다.
+
+**deleteComment**
+comment의 hashtag들을 disconnect 한다.

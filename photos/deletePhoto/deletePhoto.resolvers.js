@@ -31,7 +31,6 @@ const resolverFn = async (_, { id }, { loggedInUser }) => {
       error: "Not authorized.",
     };
   } else {
-    console.log(photo);
     //hashtags 삭제
     const hashtags = photo.hashtags.map((hashtag) => hashtag);
     await client.photo.update({
