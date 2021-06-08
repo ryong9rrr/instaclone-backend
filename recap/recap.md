@@ -63,6 +63,7 @@
 - #6.16.1 Delete Comment and Photos 1
 - #6.16.2 deletePhoto
 - #6.16.3 Comment hashtags
+- #6.17.1 editComment & Bug fix
 
 ---
 
@@ -668,3 +669,14 @@ comment에 hashtag가 있다면 추가하고, 그 photo에 connect 한다.
 
 **deleteComment**
 comment의 hashtag들을 disconnect 한다.
+
+## #6.17.1 editComment & Bug fix
+
+1. hashtags를 적용하는 `editComment` 생성.
+
+**버그**
+
+1. `createComment`에서 comment에 해쉬태그가 있을때만 photo를 update하도록 수정.
+2. `editPhoto`에서 comment의 해쉬태그까지 삭제되는 버그 수정.
+
+- 문제해결을 위해 `photos.utils`에 text의 해쉬태그를 가져오는 함수 생성.

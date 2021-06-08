@@ -27,7 +27,6 @@ const resolverFn = async (_, { id }, { loggedInUser }) => {
     };
   } else {
     //hashtags 삭제
-    console.log(comment);
     const hashtags = comment.hashtags.map((hashtag) => hashtag);
 
     await client.photo.update({

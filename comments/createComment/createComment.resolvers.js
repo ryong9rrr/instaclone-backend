@@ -38,16 +38,18 @@ const resolverFn = async (_, { photoId, payload }, { loggedInUser }) => {
   });
 
   //photo에 comment의 hashtags 추가
-  await client.photo.update({
-    where: {
-      id: photoId,
-    },
-    data: {
-      hashtags: {
-        connectOrCreate: hashtagObj,
+  if (hashtagObj.length > 0) {
+    await client.photo.update({
+      where: {
+        id: photoId,
       },
-    },
-  });
+      data: {
+        hashtags: {
+          connectOrCreate: hashtagObj,
+        },
+      },
+    });
+  }
 
   return {
     ok: true,

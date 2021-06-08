@@ -1,6 +1,6 @@
 import client from "../../client";
 import { protectedResolver } from "../../users/users.utils";
-import { processHashtags } from "../photos.utils";
+import { processHashtags, getHashtags } from "../photos.utils";
 
 const resolverFn = async (_, { id, caption }, { loggedInUser }) => {
   // 사진의 userId(소유자) 가 로그인한 유저와 같은지 확인
@@ -30,8 +30,8 @@ const resolverFn = async (_, { id, caption }, { loggedInUser }) => {
     data: {
       caption,
       hashtags: {
-        //배열
-        disconnect: oldPhoto.hashtags,
+        //array
+        disconnect: getHashtags(oldPhoto.caption),
         connectOrCreate: processHashtags(caption),
       },
     },
