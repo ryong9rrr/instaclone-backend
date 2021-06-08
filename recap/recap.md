@@ -64,6 +64,7 @@
 - #6.16.2 deletePhoto
 - #6.16.3 Comment hashtags
 - #6.17.1 editComment & Bug fix
+- #6.17.2 MutationResponse
 
 ---
 
@@ -684,3 +685,9 @@ comment의 hashtag들을 disconnect 한다.
 ## code fix
 
 `editPhoto.resolvers`에서 해쉬태그는 text로만 다루므로 더이상 해쉬태그를 가져오지 않는다.
+
+## #6.17.2 MutationResponse
+
+`ok, error` 값만을 return 하는 type들은 `type MutationResponse`로 대체.
+
+- token이 필요한 `login`, photo를 return하는 `uploadPhoto`는 제외.
