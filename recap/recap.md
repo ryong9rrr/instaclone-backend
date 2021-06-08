@@ -680,3 +680,7 @@ comment의 hashtag들을 disconnect 한다.
 2. `editPhoto`에서 comment의 해쉬태그까지 삭제되는 버그 수정.
 
 - 문제해결을 위해 `photos.utils`에 text의 해쉬태그를 가져오는 함수 생성.
+
+## code fix
+
+`editPhoto.resolvers`에서 해쉬태그는 text로만 다루므로 더이상 해쉬태그를 가져오지 않는다.

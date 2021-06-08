@@ -9,13 +9,6 @@ const resolverFn = async (_, { id, caption }, { loggedInUser }) => {
       id,
       userId: loggedInUser.id,
     },
-    include: {
-      hashtags: {
-        select: {
-          hashtag: true,
-        },
-      },
-    },
   });
 
   if (!oldPhoto) {
