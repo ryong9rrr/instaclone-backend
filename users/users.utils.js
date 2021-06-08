@@ -27,10 +27,18 @@ export function protectedResolver(ourResolver) {
   return function (root, args, context, info) {
     //user가 not login이면
     if (!context.loggedInUser) {
-      return {
-        ok: false,
-        error: "Please log in to perform this action.",
-      };
+      const resolverName = info.fieldName;
+      if (
+        info.operation.operation === "query" ||
+        resolverName === "uploadPhoto"
+      ) {
+        return null;
+      } else {
+        return {
+          ok: false,
+          error: "Please log in to perform this action.",
+        };
+      }
     }
     return ourResolver(root, args, context, info);
   };

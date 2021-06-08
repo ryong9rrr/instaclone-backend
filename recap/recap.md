@@ -65,6 +65,7 @@
 - #6.16.3 Comment hashtags
 - #6.17.1 editComment & Bug fix
 - #6.17.2 MutationResponse
+- #6.18 protectedResolver Bug fix
 
 ---
 
@@ -582,7 +583,7 @@ model Photo{
 
 - `photos.resolvers.js` > computed field로 user와 hashtag를 명시
 
-`protectedResolver` 는 `ok` , `error` 를 반환하는데.. `UploadPhoto` 를 그러면 `Photo` 가 아니라 `UploadPhotoResult`로 해주는게 좋지 않을까? (`protectedResolver` 로 감싸주는 건 `Result`형태로 규칙성있게)
+<del>`protectedResolver` 는 `ok` , `error` 를 반환하는데.. `UploadPhoto` 를 그러면 `Photo` 가 아니라 `UploadPhotoResult`로 해주는게 좋지 않을까? (`protectedResolver` 로 감싸주는 건 `Result`형태로 규칙성있게)</del> 👉 #6.18에서 해결
 
 ## # #6.6 seeHashtag
 
@@ -691,3 +692,11 @@ comment의 hashtag들을 disconnect 한다.
 `ok, error` 값만을 return 하는 type들은 `type MutationResponse`로 대체.
 
 - token이 필요한 `login`, photo를 return하는 `uploadPhoto`는 제외.
+
+## #6.18 protectedResolver Bug fix
+
+보호되는(`protectedResolver`로) query나 mutation의 예외처리.
+
+1. `seeFeed`는 query지만 로그인한 유저의 정보를 알아야하기 때문에 보호된다.
+
+2. `uploadPhoto`는 `Photo`를 return하기 때문에 return값을 따로 설정해줘야 함.
