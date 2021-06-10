@@ -66,6 +66,7 @@
 - #6.17.1 editComment & Bug fix
 - #6.17.2 MutationResponse
 - #6.18 protectedResolver Bug fix
+- #6.19 ~ 6.20 Upload file with AWS S3
 
 ---
 
@@ -700,3 +701,15 @@ comment의 hashtag들을 disconnect 한다.
 1. `seeFeed`는 query지만 로그인한 유저의 정보를 알아야하기 때문에 보호된다.
 
 2. `uploadPhoto`는 `Photo`를 return하기 때문에 return값을 따로 설정해줘야 함.
+
+## #6.19 ~ 6.20 Upload file with AWS S3
+
+1. 라이브러리 설치
+
+   📌 `npm install aws-sdk --save`
+
+2. AWS IAM 사용자생성 & S3 스토리지 생성
+
+   📌 https://velog.io/@ryong9rrr/AWS-IAM-%EC%82%AC%EC%9A%A9%EC%9E%90%EC%83%9D%EC%84%B1-S3-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%83%9D%EC%84%B1
+
+3. `shared.utils.js` 에 S3에 파일업로드 하는 함수 생성
