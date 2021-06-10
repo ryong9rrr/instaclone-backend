@@ -67,6 +67,7 @@
 - #6.17.2 MutationResponse
 - #6.18 protectedResolver Bug fix
 - #6.19 ~ 6.20 Upload file with AWS S3
+- ERROR: "Maximum call stack size exceeded"
 
 ---
 
@@ -713,3 +714,13 @@ comment의 hashtag들을 disconnect 한다.
    📌 https://velog.io/@ryong9rrr/AWS-IAM-%EC%82%AC%EC%9A%A9%EC%9E%90%EC%83%9D%EC%84%B1-S3-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%83%9D%EC%84%B1
 
 3. `shared.utils.js` 에 S3에 파일업로드 하는 함수 생성
+
+## ERROR: "Maximum call stack size exceeded"
+
+> https://www.npmjs.com/package/graphql-upload#graphql-upload
+
+Altair에서 파일을 업로드하려니 또 발생한 에러...
+
+`ApolloServer`에서 오는 `graphql-upload`를 disable한 후 최신 버전의 graphql-upload를 설치한다.
+
+📌 `npm install graphql-upload@latest`
