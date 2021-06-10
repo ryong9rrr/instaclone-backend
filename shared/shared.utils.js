@@ -12,7 +12,7 @@ AWS.config.update({
 export const uploadToS3 = async (file, userId, folderName) => {
   const { filename, createReadStream } = await file;
   const fileStream = createReadStream();
-  const objName = `${userId}-${Date.now()}-${filename}`;
+  const objName = `${folderName}/${userId}-${Date.now()}-${filename}`;
 
   const data = await new AWS.S3({ apiVersion: "2006-03-01" })
     .upload({
@@ -24,5 +24,5 @@ export const uploadToS3 = async (file, userId, folderName) => {
     .promise();
   console.log(data);
 
-  return "";
+  return data.Location;
 };

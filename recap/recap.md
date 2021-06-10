@@ -68,6 +68,13 @@
 - #6.18 protectedResolver Bug fix
 - #6.19 ~ 6.20 Upload file with AWS S3
 - ERROR: "Maximum call stack size exceeded"
+- #6.21 Upload file with AWS S3 finished
+
+## 추가할 기능
+
+- 데이터를 불러오는 작업들 - 프론트엔드 하면서 cursor pagination하기
+
+- #6.21 하다가 생각남) editProfile이나 editPhoto를 했을 경우, S3에서 바로 삭제하지 않고 휴지통같은 폴더를 만들어서 데이터를 보존하다가 얼마간의 시간이 지난 후 자동으로 삭제되는 백엔드 코드.
 
 ---
 
@@ -724,3 +731,11 @@ Altair에서 파일을 업로드하려니 또 발생한 에러...
 `ApolloServer`에서 오는 `graphql-upload`를 disable한 후 최신 버전의 graphql-upload를 설치한다.
 
 📌 `npm install graphql-upload@latest`
+
+## #6.21 Upload file with AWS S3 finished
+
+S3에 폴더객체를 만들어서 그 안에다가 파일보관.
+
+**추가할 기능**
+
+나중에 editProfile이나 editPhoto를 했을 경우, S3에서 바로 삭제하지 않고 휴지통같은 폴더를 만들어서 데이터를 보존하다가 얼마간의 시간이 지난 후 자동으로 삭제되는 백엔드 코드를 작성해보자. (#6.21 댓글도 참고하면 좋을듯)

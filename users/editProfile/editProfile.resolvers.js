@@ -1,4 +1,4 @@
-import { createWriteStream } from "fs";
+//import { createWriteStream } from "fs";
 import bcrypt from "bcrypt";
 import client from "../../client";
 import { protectedResolver } from "../users.utils";
@@ -12,7 +12,7 @@ const resolverFn = async (
   let avatarUrl = null;
   if (avatar) {
     // S3 storage에 저장하는 코드
-    avatarUrl = await uploadToS3(avatar, loggedInUser.id);
+    avatarUrl = await uploadToS3(avatar, loggedInUser.id, "avatars");
 
     /* 폴더를 생성하고 그 안에 파일을 저장하는 코드
     const { filename, createReadStream } = await avatar;
