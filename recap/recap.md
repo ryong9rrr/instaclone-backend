@@ -70,6 +70,10 @@
 - ERROR: "Maximum call stack size exceeded"
 - #6.21 Upload file with AWS S3 finished
 
+### Direct Messages
+
+- #7.0 intro
+
 ## 추가할 기능
 
 - 데이터를 불러오는 작업들 - 프론트엔드 하면서 cursor pagination하기
@@ -739,3 +743,11 @@ S3에 폴더객체를 만들어서 그 안에다가 파일보관.
 **추가할 기능**
 
 나중에 editProfile이나 editPhoto를 했을 경우, S3에서 바로 삭제하지 않고 휴지통같은 폴더를 만들어서 데이터를 보존하다가 얼마간의 시간이 지난 후 자동으로 삭제되는 백엔드 코드를 작성해보자. (#6.21 댓글도 참고하면 좋을듯)
+
+---
+
+# Direct Messages
+
+## #7.0 intro
+
+real-time message와 같은 시스템은 Erlang(얼랭)과 같이 성능이 굉장히 좋은(하지만 어려움..) 언어를 사용하면 좋고, 데이터베이스도 postgresQL이 아닌 다른 것을 사용하면 좋겠지만... 일단 알고만 넘어가고 지금은 nodeJS 기반으로 개발을 하고 있지만 규모가 커지면 nodeJS로는 한계가 있음(알고있지?). 그래도 graphql과 nodeJS로 한번 구현해보겠다. 나는 이거를 어디에 응용해볼수 있을지 생각하면 좋을듯.
