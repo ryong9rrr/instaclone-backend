@@ -73,6 +73,7 @@
 ### Direct Messages
 
 - #7.0 intro
+- #7.1 model Room, Message
 
 ## 추가할 기능
 
@@ -751,3 +752,13 @@ S3에 폴더객체를 만들어서 그 안에다가 파일보관.
 ## #7.0 intro
 
 real-time message와 같은 시스템은 Erlang(얼랭)과 같이 성능이 굉장히 좋은(하지만 어려움..) 언어를 사용하면 좋고, 데이터베이스도 postgresQL이 아닌 다른 것을 사용하면 좋겠지만... 일단 알고만 넘어가고 지금은 nodeJS 기반으로 개발을 하고 있지만 규모가 커지면 nodeJS로는 한계가 있음(알고있지?). 그래도 graphql과 nodeJS로 한번 구현해보겠다. 나는 이거를 어디에 응용해볼수 있을지 생각하면 좋을듯.
+
+## #7.1 model Room, Message
+
+사용자가 사용자에게 메세지를 보내는 것이 아닌 사용자가 "대화방" 안에 메세지를 남긴다는 개념.
+
+**relation**
+
+- User - Room : 다대다 (Room 안에는 2명의 유저(1대1 대화방)가 존재함)
+- User - Message : 일대다
+- Room - Message : 일대다
