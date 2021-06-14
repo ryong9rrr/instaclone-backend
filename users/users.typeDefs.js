@@ -12,6 +12,8 @@ export default gql`
     photos: [Photo]
     followers: [User]
     following: [User]
+    rooms: [Room]
+    messages: [Message]
     createdAt: String!
     updatedAt: String!
     totalPhotos: Int!

@@ -74,6 +74,7 @@
 
 - #7.0 intro
 - #7.1 model Room, Message
+- #7.2 ~ 7.6 Room & Message
 
 ## 추가할 기능
 
@@ -762,3 +763,25 @@ real-time message와 같은 시스템은 Erlang(얼랭)과 같이 성능이 굉�
 - User - Room : 다대다 (Room 안에는 2명의 유저(1대1 대화방)가 존재함)
 - User - Message : 일대다
 - Room - Message : 일대다
+
+## #7.2 ~ 7.6 Room & Message
+
+### `seeRooms`
+
+- `message의 updatedAt`기준으로 내림차순 정렬(최신것이 맨상단에 뜨도록)
+- 7개씩 보이도록 cursor pagination
+
+### `sendMessage`
+
+- Room이 없다면 UserId를 통해 `createRoom`
+- Room이 있다면 바로 Room으로 직행
+
+### `seeRoom`
+
+### computed field
+
+- `unreadTotal` : 로그인하지 않은 상태면 0, 내가 보내지 않은 메시지 중 읽지않은(`read:false`)를 센다.
+
+### `readMessage`
+
+- 읽으면 `read: true`가 되도록.
