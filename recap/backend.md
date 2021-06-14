@@ -1,6 +1,6 @@
-# instaclone-backend
-
-`git config --global core.autocrlf true`
+- apollo server
+- prisma2 > prisma studio / prisma CLI / prisma client / prisma migrate
+- graphQL
 
 ---
 
@@ -76,27 +76,7 @@
 - #7.1 model Room, Message
 - #7.2 ~ 7.6 Room & Message
 
-## 추가할 기능
-
-- 데이터를 불러오는 작업들 - 프론트엔드 하면서 cursor pagination하기
-
-- #6.21 하다가 생각남) editProfile이나 editPhoto를 했을 경우, S3에서 바로 삭제하지 않고 휴지통같은 폴더를 만들어서 데이터를 보존하다가 얼마간의 시간이 지난 후 자동으로 삭제되는 백엔드 코드.
-
 ---
-
---backend--
-
-- apollo server
-- prisma2 > prisma studio / prisma CLI / prisma client / prisma migrate
-- graphQL
-
---frontend--
-
-- react
-
---app--
-
-- react-native > expo / CLI, CLI는 기업에서 쓰인다. 둘다 배울거임
 
 # Setup
 
