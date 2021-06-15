@@ -1,4 +1,6 @@
 import client from "../../client";
+import { NEW_MESSAGE } from "../../constants";
+import pubsub from "../../pubsub";
 import { protectedResolver } from "../../users/users.utils";
 
 const resolverFn = async (_, { userId, roomId, payload }, { loggedInUser }) => {
@@ -109,6 +111,9 @@ const resolverFn = async (_, { userId, roomId, payload }, { loggedInUser }) => {
       updatedAt: message.createdAt,
     },
   });
+
+  //subscriptions
+  pubsub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
 
   return {
     ok: true,

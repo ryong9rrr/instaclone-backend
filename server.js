@@ -1,4 +1,5 @@
 require("dotenv").config();
+import http from "http";
 import { graphqlUploadExpress } from "graphql-upload";
 import express from "express";
 import logger from "morgan";
@@ -7,14 +8,16 @@ import { typeDefs, resolvers } from "./schema";
 import { getUser } from "./users/users.utils";
 
 const PORT = process.env.PORT;
-const apollo = new ApolloServer({
+const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
   uploads: false,
   context: async ({ req }) => {
-    return {
-      loggedInUser: await getUser(req.headers.token),
-    };
+    if (req) {
+      return {
+        loggedInUser: await getUser(req.headers.token),
+      };
+    }
   },
 });
 
@@ -22,9 +25,12 @@ const app = express();
 app.use(logger("tiny"));
 app.use(graphqlUploadExpress());
 // applyMiddleware 는 항상 logger 바로 뒤에 있어야함
-apollo.applyMiddleware({ app });
-
+apolloServer.applyMiddleware({ app });
 app.use("/static", express.static("uploads"));
-app.listen({ port: PORT }, () => {
+
+const httpServer = http.createServer(app);
+apolloServer.installSubscriptionHandlers(httpServer);
+
+httpServer.listen(PORT, () => {
   console.log(`🚀 Server ready at http://localhost:${PORT}/graphql`);
 });

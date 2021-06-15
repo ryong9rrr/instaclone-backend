@@ -75,6 +75,7 @@
 - #7.0 intro
 - #7.1 model Room, Message
 - #7.2 ~ 7.6 Room & Message
+- #7.7 ~ 7.8 Apollo server setup for Subscriptions
 
 ---
 
@@ -765,3 +766,7 @@ real-time message와 같은 시스템은 Erlang(얼랭)과 같이 성능이 굉�
 ### `readMessage`
 
 - 읽으면 `read: true`가 되도록.
+
+## #7.7 ~ 7.8 Apollo server setup for Subscriptions
+
+> https://velog.io/@ryong9rrr/Apollo-server-Subscriptions-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95
