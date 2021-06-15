@@ -77,6 +77,7 @@
 - #7.2 ~ 7.6 Room & Message
 - #7.7 ~ 7.8 Apollo server setup for Subscriptions
 - #7.9 Subscriptions filtering 1
+- #7.10 Subscriptions filtering 2
 
 ---
 
@@ -778,7 +779,7 @@ real-time message와 같은 시스템은 Erlang(얼랭)과 같이 성능이 굉�
 
 `withFilter`는 2개의 매개변수를 사용한다.
 
-- 두번째 변수는 Boolean을 return해야함.
+- 두번째 변수는 Boolean을 return해야함(중요!)
 
 ---
 
@@ -824,3 +825,9 @@ mutation{
 //variables
 { id: 2 }
 ```
+
+## #7.10 Subscriptions filtering 2
+
+#7.9에서 존재하지 않는 방에 대해서도 작동이 되었는데 그에대한 에러fix.
+
+throw Error를 하는 이유는 어쨌든 return값이 Boolean이어야 하기 때문인데 return null도 안된다. (그래서 그냥 throw Error)
