@@ -76,6 +76,7 @@
 - #7.1 model Room, Message
 - #7.2 ~ 7.6 Room & Message
 - #7.7 ~ 7.8 Apollo server setup for Subscriptions
+- #7.9 Subscriptions filtering 1
 
 ---
 
@@ -770,3 +771,56 @@ real-time message와 같은 시스템은 Erlang(얼랭)과 같이 성능이 굉�
 ## #7.7 ~ 7.8 Apollo server setup for Subscriptions
 
 > https://velog.io/@ryong9rrr/Apollo-server-Subscriptions-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95
+
+## #7.9 Subscriptions filtering 1
+
+> https://www.apollographql.com/docs/apollo-server/data/subscriptions/#filtering-events
+
+`withFilter`는 2개의 매개변수를 사용한다.
+
+- 두번째 변수는 Boolean을 return해야함.
+
+---
+
+roomUpdates에서
+
+```
+subscription{
+  roomUpdates(id:2){
+    id
+    payload
+  }
+}
+```
+
+로 ws를 구동하고
+
+sendMessage로
+
+```
+mutation{
+  sendMessage(roomId:4, payload:"what"){
+    ok
+    error
+  }
+}
+```
+
+을 했을 때 payload와 variables의 값은 다음과 같다.
+
+```
+//payload
+{
+  roomUpdates: {
+    id: 18,
+    payload: 'what',
+    userId: 1,
+    roomId: 4,
+    read: false,
+    createdAt: 2021-06-15T15:02:15.050Z,
+    updatedAt: 2021-06-15T15:02:15.051Z
+  }
+}
+//variables
+{ id: 2 }
+```
