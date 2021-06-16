@@ -12,12 +12,32 @@ const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
   uploads: false,
-  context: async ({ req }) => {
-    if (req) {
+  context: async (ctx) => {
+    //http request일 때
+    if (ctx.req) {
       return {
-        loggedInUser: await getUser(req.headers.token),
+        loggedInUser: await getUser(ctx.req.headers.token),
+      };
+    } //ws listening 할 때
+    else {
+      // 이 값은 roomUpdates.resolvers 의 context 값에 담긴다.
+      return {
+        loggedInUser: ctx.connection.context.loggedInUser,
       };
     }
+  },
+  subscriptions: {
+    // 여기서 return한 값이 context 필드로 넘어가서 ctx.connection.context에 담긴다.
+    //(connectionParams, webSocket, context)
+    onConnect: async ({ token }, webSocket, context) => {
+      if (!token) {
+        throw new Error("You can't listen.");
+      }
+      const loggedInUser = await getUser(token);
+      return {
+        loggedInUser,
+      };
+    },
   },
 });
 

@@ -78,6 +78,7 @@
 - #7.7 ~ 7.8 Apollo server setup for Subscriptions
 - #7.9 Subscriptions filtering 1
 - #7.10 Subscriptions filtering 2
+- #7.11 ~ 12 Subscriptions Authentication
 
 ---
 
@@ -831,3 +832,17 @@ mutation{
 #7.9에서 존재하지 않는 방에 대해서도 작동이 되었는데 그에대한 에러fix.
 
 throw Error를 하는 이유는 어쨌든 return값이 Boolean이어야 하기 때문인데 return null도 안된다. (그래서 그냥 throw Error)
+
+## #7.11 ~ 12 Subscriptions Authentication
+
+### `sendMessage` 수정
+
+kim이 lee에게 메세지를 보냄 > 그러면 kim과 lee가 있는 방이 생성이 됨 > 그 방의 id를 통해 yong이 그 방에 메세지를 보냄??? >
+
+그러면 그 방에 존재하는 user는 kim과 lee인데 뜬금포로 yong이 보낸 메세지가 존재하게 됨.
+
+이런 error를 방지한다.
+
+### server.js & roomUpdates.resolvers.js
+
+`sendMessage`를 수정했던 이유처럼 내가 없는 방에 메세지를 보내면 안되는 것 처럼 listening도 하면 안되니까.

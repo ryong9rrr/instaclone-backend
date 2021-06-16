@@ -69,9 +69,15 @@ const resolverFn = async (_, { userId, roomId, payload }, { loggedInUser }) => {
       });
     }
   } else if (roomId) {
-    room = await client.room.findUnique({
+    //room이 존재해도 내가 있는 room이 아니면 메세지를 보낼 수 없음.
+    room = await client.room.findFirst({
       where: {
         id: roomId,
+        users: {
+          some: {
+            id: loggedInUser.id,
+          },
+        },
       },
       select: {
         id: true,
