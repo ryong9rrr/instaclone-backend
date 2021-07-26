@@ -9,3 +9,7 @@
 210716
 
 - 프론트에서 처리를 위해 createAccount 에서 존재하는 유저로 계정을 생성할 시 throw new Error 했던 것을 return ok, error로 변경했음.
+
+210726 code 추가
+
+- (올바른) 로그인상태인지 아닌지를 판단하는 query - me 를 추가했음.
