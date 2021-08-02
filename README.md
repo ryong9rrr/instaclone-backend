@@ -30,6 +30,10 @@
 
 - 내가 좋아요를 눌렀는지 아닌지 판단하는 photo - `isLiked` 스키마 생성
 
+210803 code 추가
+
+- 프론트엔드 comments 작업을 위해 해당 photo에 달려있는 코멘트 수와 코멘트를 반환하는 computing함수를 작성함.
+
 ## 📖 목차
 
 ### Setup

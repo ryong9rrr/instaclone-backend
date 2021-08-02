@@ -2,14 +2,13 @@ import client from "../client";
 
 export default {
   Photo: {
-    user: ({ userId }) => {
-      return client.user.findUnique({ where: { id: userId } });
-    },
-    hashtags: ({ id }) => {
-      return client.hashtag.findMany({ where: { photos: { some: { id } } } });
-    },
+    user: ({ userId }) => client.user.findUnique({ where: { id: userId } }),
+    hashtags: ({ id }) =>
+      client.hashtag.findMany({ where: { photos: { some: { id } } } }),
     likes: ({ id }) => client.like.count({ where: { photoId: id } }),
-    comments: ({ id }) => client.comment.count({ where: { photoId: id } }),
+    commentsNumber: ({ id }) =>
+      client.comment.count({ where: { photoId: id } }),
+    comments: ({ id }) => client.photo.findUnique({ where: { id } }).comments(),
     isMine: ({ userId }, _, { loggedInUser }) => {
       if (!loggedInUser) {
         return false;
@@ -45,8 +44,7 @@ export default {
         ...(lastId && { cursor: { id: lastId } }),
       });
     },
-    totalPhotos: ({ id }) => {
-      return client.photo.count({ where: { hashtags: { some: { id } } } });
-    },
+    totalPhotos: ({ id }) =>
+      client.photo.count({ where: { hashtags: { some: { id } } } }),
   },
 };
