@@ -34,6 +34,10 @@
 
 - 프론트엔드 comments 작업을 위해 해당 photo에 달려있는 코멘트 수와 코멘트를 반환하는 computing함수를 작성함.
 
+210813 code 추가
+
+- `mutationResponse`에서 새로만든 comment의 id를 받아오기 위해 스키마에 id를 추가.
+
 ## 📖 목차
 
 ### Setup
