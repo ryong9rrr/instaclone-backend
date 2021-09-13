@@ -18,25 +18,29 @@
 
 ## Update
 
-210716
+# 210716
 
 - 프론트에서 처리를 위해 createAccount 에서 존재하는 유저로 계정을 생성할 시 throw new Error 했던 것을 return ok, error로 변경했음.
 
-210726 code 추가
+# 210726 code 추가
 
 - (올바른) 로그인상태인지 아닌지를 판단하는 query - me 를 추가했음.
 
-210730 code 추가
+# 210730 code 추가
 
 - 내가 좋아요를 눌렀는지 아닌지 판단하는 photo - `isLiked` 스키마 생성
 
-210803 code 추가
+# 210803 code 추가
 
 - 프론트엔드 comments 작업을 위해 해당 photo에 달려있는 코멘트 수와 코멘트를 반환하는 computing함수를 작성함.
 
-210813 code 추가
+# 210813 code 추가
 
 - `mutationResponse`에서 새로만든 comment의 id를 받아오기 위해 스키마에 id를 추가.
+
+# 210913 users.resolvers photo 내림차순
+
+- 프로필에서 photo들이 createdAt 기준으로 내림차순으로 정렬되도록 하였음.
 
 ## 📖 목차
 
