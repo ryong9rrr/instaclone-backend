@@ -1,9 +1,5 @@
 # instaclone-backend
 
-`git config --global core.autocrlf true`
-
----
-
 - apollo server
 - prisma2 > prisma studio / prisma CLI / prisma client / prisma migrate
 - graphQL
